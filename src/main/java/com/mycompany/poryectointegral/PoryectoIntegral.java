@@ -177,17 +177,17 @@ int opcion;
     }
     
     public static void verHorarios() {
-        if (numPersonas==0) {
+        if (numPersonas == 0) {
             JOptionPane.showMessageDialog(null, "No hay personas para ver horarios.");
-        }
-        else{
+        } else {
             // Se muestra una lista de los horarios de las personas
-            StringBuilder horariosPersonas= new StringBuilder("Horarios de las personas:\n");
+            StringBuilder horariosPersonas = new StringBuilder("Horarios de las personas:\n");
             for (int i = 0; i < numPersonas; i++) {
-                horariosPersonas.append("Persona ").append(i+1).append(": ")
-                .append(personal[i].getNombre()).append(" ")
-                .append(personal[i].getApellido()).append("\n");
-                // Aquí se deberían agregar los horarios, pero como no hay implementación de horarios, se omite.
+                horariosPersonas.append("Persona ").append(i + 1).append(": ")
+                    .append(personal[i].getNombre()).append(" ")
+                    .append(personal[i].getApellido()).append("\n")
+                    .append("Hora de entrada: ").append(personal[i].getHoraEntrada() != null ? personal[i].getHoraEntrada() : "No registrada").append("\n")
+                    .append("Hora de salida: ").append(personal[i].getHoraSalida() != null ? personal[i].getHoraSalida() : "No registrada").append("\n\n");
             }
             JOptionPane.showMessageDialog(null, horariosPersonas.toString());
         }
